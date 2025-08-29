@@ -58,7 +58,6 @@
 - `tsx`
 - `pnpm`
 - `dotenv`
-- `tsc-alias`
 
 ---
 
