@@ -10,8 +10,8 @@
 
 <p align="center">
   <a href="https://github.com/skydiver/typescript-starter/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/skydiver/typescript-starter" /></a>
-  <a href="https://www.typescriptlang.org/"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.8-blue" /></a>
-  <a href="https://nodejs.org"><img alt="Node.js" src="https://img.shields.io/badge/node-22.x-brightgreen" /></a>
+  <a href="https://www.typescriptlang.org/"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-blue" /></a>
+  <a href="https://nodejs.org"><img alt="Node.js" src="https://img.shields.io/badge/node-24.x-brightgreen" /></a>
   <a href="https://pnpm.io"><img alt="pnpm" src="https://img.shields.io/badge/pnpm-10.x-f692ce" /></a>
   <a href="https://biomejs.dev"><img alt="Code Style: Biome" src="https://img.shields.io/badge/code_style-biome-1f425f" /></a>
   <img alt="Modern ESM" src="https://img.shields.io/badge/esm-supported-4B0082" />
@@ -24,11 +24,11 @@
 ## 🧰 Features
 
 - ⚡ **TypeScript** – Modern type safety and tooling
-- 🛠️ **ESBuild** – Ultra-fast bundling
+- 🛠️ **tsup** – Zero-config bundling with DTS generation
 - 🧪 **Vitest** – Blazing-fast unit testing
 - 🧹 **Biome** – Linting, formatting, and type checks in one
 - 📦 **pnpm** – Fast and efficient package management
-- 🌳 **Node 22+** – Optimized for the latest LTS
+- 🌳 **Node 24+** – Optimized for the latest LTS
 - 🔧 **TSX** – Instant dev with native ESM and TypeScript
 - 🧼 **Clean Build Scripts** – Minimal, extensible, and production-ready
 
@@ -36,28 +36,28 @@
 
 ## 📦 Scripts
 
-| Script             | Description                      |
-| ------------------ | -------------------------------- |
-| `pnpm dev`         | Start dev server with hot reload |
-| `pnpm build`       | Build production output          |
-| `pnpm start`       | Run compiled app                 |
-| `pnpm clean`       | Clean the `build` directory      |
-| `pnpm test`        | Run unit tests with Vitest       |
-| `pnpm lint:check`  | Run static checks via Biome      |
-| `pnpm lint:fix`    | Auto-fix issues                  |
-| `pnpm lint:format` | Format code with Biome           |
+| Script               | Description                       |
+| -------------------- | --------------------------------- |
+| `pnpm dev`           | Start dev server with hot reload  |
+| `pnpm build`         | Build production output with DTS  |
+| `pnpm start`         | Run source directly via tsx       |
+| `pnpm clean`         | Clean the `build` directory       |
+| `pnpm test`          | Run unit tests with Vitest        |
+| `pnpm test:coverage` | Run tests with coverage report    |
+| `pnpm lint`          | Run linting and formatting checks |
+| `pnpm lint:fix`      | Auto-fix lint and format issues   |
+| `pnpm typecheck`     | Run TypeScript type checking      |
 
 ---
 
 ## 🧱 Stack
 
 - `typescript`
-- `esbuild`
+- `tsup`
 - `vitest` + `@vitest/coverage-v8`
 - `@biomejs/biome`
 - `tsx`
 - `pnpm`
-- `dotenv`
 
 ---
 
