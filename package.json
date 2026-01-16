@@ -8,39 +8,44 @@
     "url": "https://github.com/skydiver/"
   },
   "type": "module",
-  "main": "build/bundle.js",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js"
+    }
+  },
+  "main": "./build/index.js",
   "scripts": {
-    "build": "pnpm clean && tsx esbuild.config.ts && chmod +x build/bundle.js",
+    "build": "tsup",
     "clean": "rimraf build",
     "dev": "tsx watch src/index.ts",
-    "lint:check": "biome check .",
-    "lint:fix": "biome check --fix .",
-    "lint:format": "biome format --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "start": "tsx src/index.ts",
     "test": "vitest src",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
-    "@tsconfig/node22": "^22.0.1",
+    "@tsconfig/node24": "^24.0.0",
     "@types/node": "^25.0.0",
     "@vitest/coverage-v8": "^4.0.10",
-    "dotenv": "^17.2.0",
-    "esbuild": "^0.27.2",
     "globals": "^17.0.0",
     "rimraf": "^6.1.0",
+    "tsup": "^8.5.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^6.0.4",
     "vitest": "^4.0.10"
   },
-  "packageManager": "pnpm@10.0.0",
+  "packageManager": "pnpm@10.28.0",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "volta": {
-    "node": "22.13.1",
-    "pnpm": "10.0.0"
+    "node": "24.13.1",
+    "pnpm": "10.28.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
