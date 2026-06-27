@@ -4,6 +4,10 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["ES2023"],
+    "types": ["node"],
+    // tsup re-injects `baseUrl` during dts generation to resolve `paths`;
+    // silence the TS6 deprecation until the 7.0 migration.
+    "ignoreDeprecations": "6.0",
     "sourceMap": true,
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
@@ -21,9 +25,8 @@
     "noImplicitOverride": true,
     "outDir": "build",
     "rootDir": "src",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.test.ts"],

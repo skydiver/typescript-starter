@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - esbuild
+
+# Pin patched transitive dep until upstream parents ship it:
+# esbuild >=0.28.1 fixes a dev-server arbitrary file read (pulled via tsup / vite).
+# vite is pinned directly in package.json devDependencies (it's a peer dep,
+# which pnpm overrides do not affect).
+overrides:
+  esbuild: ^0.28.1
